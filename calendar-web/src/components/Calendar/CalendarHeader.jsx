@@ -1,6 +1,6 @@
 import React from "react";
 import { format } from "date-fns";
-import style from "../assets/styles.css";
+import "../assets/styles.css";
 import img from "../img";
 
 
