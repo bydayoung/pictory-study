@@ -14,19 +14,21 @@ function Calendar() {
     const handlePrevMonth = () => setCurrentDate(subMonths(currentDate, 1));
 
     return (
-        <div>
+        <div className="calendar">
+            <div className="calendar-header">
             <CalendarHeader 
             currentDate = {currentDate}
             onNext = {handleNextMonth}
             onPrev = {handlePrevMonth}
             /> 
-            <div className = "calendar-container">
-                <div className="calendar-grid">
+            </div>
+            <div className = "calendar-body">
+                <div className="calendar-day">
                     <CalendarGrid currentDate = {currentDate} />
                 </div>
-            </div>
-            <div className="post-list">
-                <List />
+                <div className="list">    
+                    <List />
+                </div>
             </div>
             
         </div>

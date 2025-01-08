@@ -1,20 +1,25 @@
-import React, { useState } from "react";
-import { posts } from "../Post/postDB"; // Post.js에서 posts 배열을 import
-import Post from "../Post/post";
-import img from "../img";
+import React from "react";
+import { posts } from "../Post/postDB"; // 데이터베이스에서 posts 가져오기
+import ListPost from "./ListPost"; // Post 컴포넌트 가져오기
+import "../assets/styles.css";
 
-  
 function List() {
-    return (
-      <div className="list-container">
-        <h2>게시판 목록</h2>
-        <ul className="post-list">
-          {posts.map((post) => (
-            <Post key={post.id} post={post} /> 
-          ))}
-        </ul>
-      </div>
-    );
-  }
+  return (
+    <div className="sidebar">
+      
+      {/* <div className="rectangle" />
+      <div className="text-wrapper-2">list</div> */}
+
+      {posts.map((post) => (
+        <ListPost
+          key={post.id}
+          title={post.title}
+          content={post.content}
+          image={post.image}
+        />
+      ))}
+    </div>
+  );
+}
 
 export default List;

@@ -4,6 +4,8 @@ import HeaderIcon from "./assets/img/HeaderIcon.png";
 import GoInputInactive from "./assets/img/GoInput-inactive.png";
 import GoInputactive from "./assets/img/GoInput-active.png";
 
+
+
 const img = {
   PICTORY,
   HeaderIcon,

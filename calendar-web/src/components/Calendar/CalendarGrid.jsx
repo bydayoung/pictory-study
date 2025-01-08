@@ -14,7 +14,7 @@ function CalendarGrid({ currentDate }) {
     day = addDays(day, 1);
   }
 
-  const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const weekDays = ["일", "월", "화", "수", "목", "금", "토"];
 
   return (
     <div style={{ display: "grid", gridTemplateColumns: "repeat(7, 1fr)" }}>
