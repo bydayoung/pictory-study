@@ -14,8 +14,9 @@ function List() {
         <ListPost
           key={post.id}
           title={post.title}
-          content={post.content}
+          content={post.content || ""}
           image={post.image}
+          date={post.date}
         />
       ))}
     </div>

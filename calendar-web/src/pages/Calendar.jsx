@@ -6,11 +6,8 @@ import img from "../components/img";
 
 function CalendarPage() {
   return (
-        <div>
-    <Link to ='/'>
-        Back to the Home
-    </Link>
-    <Calendar />
+    <div>
+      <Calendar />
     </div>
 
   );

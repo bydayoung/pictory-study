@@ -1,6 +1,7 @@
 import React from "react";
 import { startOfMonth, endOfMonth, startOfWeek, endOfWeek, addDays } from "date-fns";
 import CalendarDay from "./CalendarDay";
+import "../assets/styles.css";
 
 function CalendarGrid({ currentDate }) {
   const startDate = startOfWeek(startOfMonth(currentDate));
@@ -17,18 +18,28 @@ function CalendarGrid({ currentDate }) {
   const weekDays = ["일", "월", "화", "수", "목", "금", "토"];
 
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "repeat(7, 1fr)" }}>
+    <div className="navbar">
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(7, 1fr)" }}>
       
-      {weekDays.map((weekday, index) => (
-        <div key={index} style={{ textAlign: "center", fontWeight: "bold" }}>
-          {weekday}
-        </div>
-      ))}
       
-      {days.map((day, index) => (
-        <CalendarDay key={index} date={day} />
-      ))}
+        {weekDays.map((weekday, index) => (
+          <div key={index}>
+            {weekday}
+          </div>
+        ))}
+        
+        {days.map((day, index) => (
+          <CalendarDay
+            className = "calendar-date-instance"
+            ellipseClassName = "design-component-instance"
+            property1 = "normal" 
+            key={index} date={day} 
+          />
+        ))}
+      </div>  
+
     </div>
+    
   );
 }
 
