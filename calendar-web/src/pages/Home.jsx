@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import "../components/assets/styles.css";
 import img from "../components/img";
-
+import border from "../components/assets/img/Border.png";
 import group1 from "../components/assets/img/group-1.png";
 import group2 from "../components/assets/img/group-2.png";
 import group13 from "../components/assets/img/group-13.png";
@@ -13,6 +13,7 @@ import vector306 from "../components/assets/img/vector-306.svg";
 import vector316 from "../components/assets/img/vector-316.svg";
 
 const Home = () => {
+  const [isHovered, setIsHovered] = useState(false);
   return (
     <div className="intro">
       <div className='jung'>
@@ -100,7 +101,22 @@ const Home = () => {
           </p>
         </div>
       </div>
-      <div className="text-wrapper"><Link to="/calendar">Start here</Link></div>
+      <div className="text-wrapper"
+        onMouseEnter={()=>setIsHovered(true)}
+        onMouseLeave={()=>setIsHovered(false)}
+        style={{position: "relative"}}>
+      <Link to="/calendar">Start here</Link></div>
+      {isHovered && (
+        <img src={border}
+        style={{
+          position: "absolute",
+          width: "15vw",
+          left: "41.8vw",
+          top: "288vh",
+          pointerEvents: "none"
+        }}
+        />
+      )}
       <img className="group-5" alt="Group" src={group2} />
       <img className="vector-2" alt="Vector" src={vector306} />
       <div className="text-wrapper-2">Ai drawing diary</div>

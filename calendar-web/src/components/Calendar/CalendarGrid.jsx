@@ -18,16 +18,15 @@ function CalendarGrid({ currentDate }) {
   const weekDays = ["일", "월", "화", "수", "목", "금", "토"];
 
   return (
-    <div className="navbar">
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(7, 1fr)" }}>
-      
-      
+      <div className="calendar-container">
+        <div className="week-days">
         {weekDays.map((weekday, index) => (
           <div key={index}>
             {weekday}
           </div>
         ))}
-        
+        </div>
+        <div className="navbar">
         {days.map((day, index) => (
           <CalendarDay
             className = "calendar-date-instance"
@@ -37,9 +36,7 @@ function CalendarGrid({ currentDate }) {
           />
         ))}
       </div>  
-
     </div>
-    
   );
 }
 

@@ -85,18 +85,42 @@ main .text-wrapper-2{
   top: 31px;
 }
 
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding-top: 20px;
+}
 
+.week-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 50px;
+  text-align: center;
+  margin-bottom: 10px;
+}
 
 .calendar-date-instance {
   flex: 0 0 auto !important;
-  gap: 17,87px !important;
+  gap: 17.87px !important;
 }
 
 .design-component-instance-node {
-  background-color: #FADF9E !important;
-  border-radius: 53.6px !important;
-  height: 107.2px !important;
-  width: 107.2px !important;
+  display: flex;
+  top: 20px;
+  justify-content: center; 
+  align-items: center;
+  background-color: #FADF9E;
+  border-radius: 53.6px;
+  height: 107.2px;
+  width: 107.2px;
+}
+
+.navbar {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 50px;
 }
 
 main.element {
@@ -109,18 +133,6 @@ main.element {
   position: absolute;
   text-align: center;
   top: 31px;
-}
-
-.navbar {
-  align-items: flex-start;
-  display: flex;
-  gap: 124px;
-  height: 96px;
-  left: 0;
-  padding: 26.8px 44.66px;
-  position: relative;
-  top: 0;
-  width: 1008px;
 }
 
 main .text-wrapper {
@@ -204,11 +216,6 @@ main .text-wrapper {
   object-fit: contain;  /* 이미지 비율 유지 */
   /*margin-right: -100px;*/
 }
-
-
-
-
-
 
 .calendar {
   border: 1px solid #ccc;
