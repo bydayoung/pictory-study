@@ -18,24 +18,28 @@ function CalendarGrid({ currentDate }) {
   const weekDays = ["일", "월", "화", "수", "목", "금", "토"];
 
   return (
-      <div className="calendar-container">
-        <div className="week-days">
+    <div className="calendar-container">
+      <div className="week-days">
         {weekDays.map((weekday, index) => (
           <div key={index}>
             {weekday}
           </div>
         ))}
-        </div>
-        <div className="navbar">
-        {days.map((day, index) => (
-          <CalendarDay
-            className = "calendar-date-instance"
-            ellipseClassName = "design-component-instance"
-            property1 = "normal" 
-            key={index} date={day} 
-          />
-        ))}
-      </div>  
+      </div>
+      <div className="navbar">
+        {days.map((day, index) => {
+          const dayOfWeek = day.getDay(); 
+          return (
+            <CalendarDay
+              className={`calendar-date-instance ${dayOfWeek === 0 ? "sunday" : dayOfWeek === 6 ? "saturday" : ""}`}
+              ellipseClassName="design-component-instance"
+              property1="normal"
+              key={index}
+              date={day}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 }
